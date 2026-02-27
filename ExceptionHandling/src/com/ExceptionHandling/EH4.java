@@ -6,16 +6,18 @@ class Demo {
 
     public void divide() {
 
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Kindly! Enter numerator to divide");
-        int num = sc.nextInt();
-
-        System.out.println("Kindly! Enter denominator");
-        int den = sc.nextInt();
-
-        int result = num / den;   // ArithmeticException yaha generate ho sakta hai
-        System.out.println("Result: " + result);
+//        Scanner sc = new Scanner(System.in);
+//
+//        System.out.println("Kindly! Enter numerator to divide");
+//        int num = sc.nextInt();
+//
+//        System.out.println("Kindly! Enter denominator");
+//        int den = sc.nextInt();
+//
+//        int result = num / den;   // ArithmeticException yaha generate ho sakta hai
+//        System.out.println("Result: " + result);
+        alpha2 a = new alpha2();   // 👈 dusri file wali class ka object
+        a.div();
     }
 }
 
