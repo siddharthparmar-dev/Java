@@ -1,3 +1,5 @@
+package com.JavaCollections;
+
 import java.util.TreeSet;
 
 public class treeSet {
