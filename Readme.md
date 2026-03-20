@@ -1,39 +1,75 @@
-# Java & Spring Boot Learning Repository 🚀
+# ☕ Core Java Learning Repository
 
-This repository contains my **learning notes, code examples, and practice projects** from the  
-**Industry-Ready Java, Spring Boot, React & Gen AI** course by **Telusko**.
-
-## 📌 Purpose
-- Track my progress in **Java & Spring Boot**
-- Store **hands-on code**, examples, and notes
-- Build a strong foundation for **backend development**
-- Prepare for **real-world projects and placements**
-
-## 🛠️ Tech Stack
-- Java
-- Spring Boot
-- Spring Data JPA
-- Spring Security
-- REST APIs
-- React (Basics)
-- Generative AI with Spring AI (Intro)
-- Git & GitHub
-
-> Folder structure may evolve as the course progresses.
-
-## 📖 Course Source
-- Platform: **Telusko**
-- Mode: Live + Recorded
-- Focus: Industry-ready backend & full-stack skills
-
-## 🚧 Status
-🔄 **In Progress** – Regular updates as I learn new concepts.
-
-## ⭐ Note
-This repository is for **learning and practice purposes**.  
-Feel free to explore and learn along!
+This repository contains my complete **Core Java learning journey**, including concepts, practice problems, and hands-on implementations.
 
 ---
 
-Happy coding! 💻🔥
+## 📌 Topics Covered
 
+* 🔤 Arrays & Strings
+* 🧮 Java Fundamentals
+* 🧱 Object-Oriented Programming (OOPs)
+* 📦 Java Collections Framework
+* ⚠️ Exception Handling
+* 🧵 Multithreading
+* 🏷️ Enums & Annotations
+* 🔄 Stream API
+
+---
+
+## 📁 Project Structure
+
+```
+Java/
+│
+├── Arrays&Strings/
+├── Java-Fundamentals/
+├── ObjectOrientedProgramming/
+├── JavaCollections/
+├── ExceptionHandling/
+├── MultiThreading/
+├── Enum&Annotations/
+├── StreamAPI/
+```
+
+---
+
+## 🚀 What I Learned
+
+* Strong understanding of **Core Java concepts**
+* Writing clean and structured code
+* Hands-on practice with real examples
+* Basics required for **Spring Boot & Backend Development**
+
+---
+
+## 🛠️ Tech Stack
+
+* Java
+* IntelliJ IDEA / VS Code
+* Git & GitHub
+
+---
+
+## 📈 Future Plans
+
+* Add more advanced problems
+* Integrate with **Spring Boot projects**
+* Add DSA-based Java solutions
+
+---
+
+## 🤝 Contributing
+
+This is a personal learning repository, but suggestions and improvements are always welcome!
+
+---
+
+## 📬 Connect With Me
+
+* LinkedIn: (Add your link)
+* GitHub: (Add your profile link)
+
+---
+
+⭐ If you like this repo, consider giving it a star!
