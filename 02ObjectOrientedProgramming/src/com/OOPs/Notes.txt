@@ -1,0 +1,152 @@
+ Notes:
+ how code works:
+ Student.java ===> Compiler ===> byte code (student.class) ===> JVM
+
+
+ ******************************************************************************************************
+
+
+ what is happening in back
+ RAM is battle field of programming
+ whenever you execute a java program , it will be loaded to the RAM
+ RAM will give instrucutions to processor and processor will execute it one by one
+ ******************************************************************************************************
+
+
+ whenever a java program exceutes , a special envoirnment is given inside the ram where the java program will execute
+ this envoirnment is called as JRE (java runtime enviornment)
+ Inside this JRE we have JVM (Java Virtual Machine), which will execute our program
+
+ ******************************************************************************************************
+
+ JVM
+ Inside JVM we have JVM Runtime data areas
+ JVM will use Multiple components to execute java program
+ Method Area
+ Runtime Stack
+ heap area
+ PC Registers
+ native stack
+
+ JAVA RUNTIME DATA AREAS (JVM MEMORY)
+
+ Java divides memory into different runtime areas for execution.
+ These are classified into:
+ 1) Thread-specific areas
+ 2) Shared areas
+
+
+ -------------------------------
+ 1. THREAD-SPECIFIC DATA AREAS
+ -------------------------------
+
+ a) Program Counter (PC) Register
+ - Stores address of current executing instruction
+ - Each thread has its own PC register
+ - Undefined for native methods
+
+ b) Java Stack
+ - Stores stack frames (method calls)
+ - Each method call creates a new frame
+ - Each frame contains:
+   * Local variables
+   * Operand stack
+   * Method return information
+
+ Example:
+ void fun() {
+     int a = 10;   // stored in stack
+ }
+
+ Errors:
+ - StackOverflowError (too many method calls)
+ - OutOfMemoryError (stack overflow)
+
+ c) Native Method Stack
+ - Used for native (C/C++) methods
+ - Similar to Java Stack
+
+
+ -------------------------------
+ 2. SHARED DATA AREAS
+ -------------------------------
+
+ a) Heap Area
+ - Stores objects and instance variables
+ - Shared among all threads
+ - Managed by Garbage Collector
+
+ Example:
+ Student s = new Student();  // object stored in heap
+
+ Error:
+ - OutOfMemoryError
+
+ b) Method Area (Metaspace)
+ - Stores:
+   * Class metadata
+   * Static variables
+   * Method code
+   * Runtime constant pool
+
+ Example:
+ static int count = 0;  // stored in method area
+
+ Note:
+ - In Java 8+, Method Area is called Metaspace
+
+ c) Runtime Constant Pool
+ - Part of Method Area
+ - Stores:
+   * String literals
+   * Numeric constants
+   * Class & method references
+
+ Example:
+ String s = "Hello";  // "Hello" stored in constant pool
+
+
+ -------------------------------
+ SUMMARY
+ -------------------------------
+
+ PC Register          -> Current instruction (Thread-specific)
+ Java Stack           -> Method execution (Thread-specific)
+ Native Method Stack  -> Native methods (Thread-specific)
+ Heap                 -> Objects (Shared)
+ Method Area          -> Class data (Shared)
+ Constant Pool        -> Constants (Shared)
+
+
+ -------------------------------
+ QUICK REVISION
+ -------------------------------
+
+ Stack  = Method calls
+ Heap   = Objects
+ Method Area = Class-level data
+ PC Register = Current instruction
+ Constant Pool = Literals & constants
+
+
+ Local variable vs instance variable
+
+A variable is local or instance , it depends on where it was first time declared
+
+===> local variable : whenever a variable is declared inside a class. It is called local variable
+
+===> class Student{
+         int id;
+         String name;
+         double age;
+
+         void sleep(){
+            id = 4;   // here id is a instance variable
+            int marks = 56;  // here marks is local variable for sleep object, because it is declared first time here
+         }
+     }
+
+===> at the time of object creation default values will be assigned to instance variables
+===> int -> 0, String -> null, double -> 0.0 , boolean -> false
+
+===> if we don't declare values to varible....JVM will intialise default value to it.
