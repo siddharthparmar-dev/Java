@@ -13,7 +13,7 @@ class Student{
 
     }
 }
-public class ClassesObject {
+public class OOP1 {
     public static void main(String[] args) {
          Student stu = new Student();
          stu.sleep();

@@ -9,7 +9,7 @@
  what is happening in back
  RAM is battle field of programming
  whenever you execute a java program , it will be loaded to the RAM
- RAM will give instrucutions to processor and processor will execute it one by one
+ RAM will give instructions to processor and processor will execute it one by one
  ******************************************************************************************************
 
 
