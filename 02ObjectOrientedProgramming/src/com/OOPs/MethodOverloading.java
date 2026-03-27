@@ -25,7 +25,7 @@ public class MethodOverloading {
         Calc c = new Calc();
         System.out.println(c.add(124845845,154464554));
         /*
-        1️⃣ Compile-Time Polymorphism (Your case ✅)
+        1️⃣ Compile-Time Polymorphism
         Achieved using Method Overloading
         Decision made at compile time
 

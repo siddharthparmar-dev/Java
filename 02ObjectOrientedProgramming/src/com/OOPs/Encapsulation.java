@@ -19,7 +19,10 @@ class Employee{
         return name;
     }
 }
-public class privateKeyword {
+/*
+Encapsulation is wrapping data and methods into a single unit and restricting direct access using access modifiers.
+ */
+public class Encapsulation {
     public static void main(String[] args) {
         Employee E = new Employee();
         E.setAge(23);
