@@ -1,8 +1,19 @@
 package com.OOPs;
+class Games{
+    static {
+        System.out.println("Welcome to game arena");
+    }
+    static String message = "hello";
+    String GameName;
+    int size;
 
+    Games(String Game,double size){
+        System.out.println(Game + " & its size is " + size + " GB");
+    }
+}
 public class StaticBlock {
     public static void main(String[] args) {
-
+        Games game = new Games("call of duty",2.5);
     }
 }
 /*
