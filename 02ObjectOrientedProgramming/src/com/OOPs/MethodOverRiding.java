@@ -31,6 +31,10 @@ public class MethodOverRiding {
 //      Object type decides which method runs (runtime)
         child.omega();  //omega method of parent class
 
+        //downcasting
+        ((Child)child).gamma();
+        //👉 "Downcasting = access child-specific methods from parent reference"
+
         /*
             🧩 Kyun?
 

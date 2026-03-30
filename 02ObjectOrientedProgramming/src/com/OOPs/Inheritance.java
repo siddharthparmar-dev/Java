@@ -25,6 +25,8 @@ public class Inheritance {
         g.show();
         g.disp();
         g.print();
+        int Age = g.age;
+        System.out.println(Age);
 
     }
 }
