@@ -32,7 +32,7 @@ public class Static {
     Static block before main method
     main method
 
-    because Class loads → Static block runs → main() runs
+    because standard loads → Static block runs → main() runs
 
     class is first loaded in jvm so static block ran first and then main method
      */

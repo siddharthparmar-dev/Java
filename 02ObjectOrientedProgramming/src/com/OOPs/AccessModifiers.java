@@ -3,7 +3,9 @@ class ProgrammingLang{
 
 }
 class Java extends ProgrammingLang{
-
+    Java(){
+        System.out.println("java application");
+    }
 }
 class Animal{
      void eat(){

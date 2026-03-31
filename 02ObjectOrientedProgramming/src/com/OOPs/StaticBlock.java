@@ -38,7 +38,7 @@ public class StaticBlock {
 /*
 Inside JVM
 ===========
-Class loader
+standard loader
 Runtime data areas
 Execution engine
 
@@ -54,7 +54,7 @@ Interpreter || JIT || Garbage collector
 //////////////////////////// In Detail ////////////////////////////////////
 
 🧠 Inside JVM (One-liners)
-🔹 Class Loader
+🔹 standard Loader
 
 👉 Loads .class files into memory.
 
