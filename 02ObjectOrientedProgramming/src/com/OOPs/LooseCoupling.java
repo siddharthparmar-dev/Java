@@ -24,6 +24,9 @@ package com.OOPs;
 //}
 public class LooseCoupling {
     public static void main(String[] args) {
+//        SystemDesign sd = new SystemDesign();
 
+        Courses courses = new Courses(new SystemDesign());
+        courses.buyTheCourse();
     }
 }

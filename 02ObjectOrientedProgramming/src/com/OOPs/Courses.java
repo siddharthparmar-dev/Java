@@ -4,13 +4,13 @@ public class Courses {
 
     private ICourse course;
 
-    public void setCourse(ICourse course){
+    Courses(ICourse course)
+    {
         this.course = course;
     }
 
-    public boolean buyTheCourse(){
-//        Devops d = new Devops();     // this is a less optimized way
-//        boolean status = d.registerCourse();
-//        return status;
+    public boolean buyTheCourse()
+    {
+        return course.registerCourse();
     }
 }
