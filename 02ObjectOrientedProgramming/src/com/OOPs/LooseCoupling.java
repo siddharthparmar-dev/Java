@@ -26,7 +26,11 @@ public class LooseCoupling {
     public static void main(String[] args) {
 //        SystemDesign sd = new SystemDesign();
 
-        Courses courses = new Courses(new SystemDesign());
-        courses.buyTheCourse();
+//        Courses courses = new Courses(new SystemDesign());
+//        courses.buyTheCourse();
+        IDelivery blueDart = new BlueDart();
+        Delivery d = new Delivery(blueDart);
+//        d.setDelivery(blueDart);
+        d.TotalAmount(500);
     }
 }

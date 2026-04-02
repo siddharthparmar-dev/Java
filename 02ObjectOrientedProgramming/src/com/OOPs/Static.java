@@ -18,6 +18,11 @@ class Demo{
         System.out.println("non static show");
     }
 }
+class alpha2 extends Demo{
+    static void disp(){
+        System.out.println("disp");
+    }
+}
 public class Static {
     static
     {
@@ -26,7 +31,8 @@ public class Static {
     public static void main(String[] args) {
 
         System.out.println("main method");
-        Demo d = new Demo();
+        Demo d = new alpha2();
+        d.disp();
     }
     /*
     Static block before main method
