@@ -10,6 +10,16 @@ class planet implements Alien {
 }
 public class Lambda {
     public static void main(String[] args) {
+
+        // we can implement an functional interface using 3 ways.
+
+        // First way ====>0
+
+        Alien alien = () -> {
+            System.out.println("without creating");
+        };
+        alien.disp();
+
       Alien alien1 = new Alien() {     //anonymous inner class // Direct implementation of interface
           @Override
           public void disp() {
