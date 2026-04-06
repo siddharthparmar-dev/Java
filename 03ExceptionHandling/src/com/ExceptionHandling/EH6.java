@@ -3,10 +3,10 @@ package com.ExceptionHandling;
 import java.util.Scanner;
 
 class Alpha {
+    Scanner scan = new Scanner(System.in);
     public void divide() {
         try {
             System.out.println("Calculator app started");
-            Scanner scan = new Scanner(System.in);
             System.out.println("Enter Numerator");
             int num = scan.nextInt();
             System.out.println("Enter Denominator");
@@ -18,7 +18,15 @@ class Alpha {
            // throw new ArithmeticException();
             throw e;  //throw ke baad method ka execution ruk jata hai
         }
+        finally {
         System.out.println("Alpha  app terminated");  // this line not got printed
+        scan.close();
+        /*
+            Agar tum System.in wale Scanner ko close kar dete ho:
+            Phir dobara input lena possible nahi hota
+            Kyuki System.in bhi close ho jata hai
+         */
+        }
     }
 }
 public class EH6 {
@@ -27,9 +35,10 @@ public class EH6 {
         Alpha alpha = new Alpha();
         alpha.divide();
         }
-        catch (ArithmeticException e){
-            System.out.println("Handled in main");
-
+        catch (ArithmeticException e) {
+            System.out.println("Handled in main");  //after exception is thrown
+            // ....control will come back to main method and here catch block will handle that exception
+        }
 /*
         🔁 Actual flow kya hua
         divide() method call hua
@@ -40,6 +49,5 @@ public class EH6 {
         ❌ method wahi khatam
         ❌ neeche wali line skip
  */
-        }
     }
 }
