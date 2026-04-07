@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 class Alpha {
     Scanner scan = new Scanner(System.in);
-    public void divide() {
+    public void divide() throws ArithmeticException  // Telling other developer that this methods will throw Arithematic Exception
+    {
         try {
             System.out.println("Calculator app started");
             System.out.println("Enter Numerator");
