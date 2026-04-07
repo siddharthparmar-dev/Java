@@ -2,7 +2,9 @@ package com.ExceptionHandling;
 
 import java.util.Scanner;
 class InvalidCustomerException extends Exception{
-
+    InvalidCustomerException(String msg){
+        super(msg);
+    }
 }
 class ATM{
     private int account_Number = 870075913;
@@ -22,9 +24,9 @@ class ATM{
             System.out.println("Collect your cash");
         }
         else {
-            System.out.println("Invalid credentials");
+           // System.out.println("Invalid credentials");
             //InvalidCustomerException invalidCustomerException = new InvalidCustomerException();
-            throw new InvalidCustomerException();
+            throw new InvalidCustomerException("Invalid credentials");
             //if he enters wrong credentials
 //            input();
 //            verify();
@@ -39,10 +41,12 @@ class Bank{
         atm.input();
         atm.verify();
         } catch (InvalidCustomerException e) {
+            System.out.println(e.getMessage());
             try {
                 atm.input();
                 atm.verify();
             } catch (InvalidCustomerException e1) {
+                System.out.println(e1.getMessage());
                 try {
                     atm.input();
                     atm.verify();
