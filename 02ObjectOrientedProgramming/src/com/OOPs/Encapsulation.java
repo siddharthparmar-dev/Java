@@ -1,3 +1,9 @@
+/*
+🔐 Encapsulation
+
+Encapsulation is the wrapping of data and methods into a single unit (class).
+It restricts direct access to data using access modifiers and provides controlled access via getters/setters.
+ */
 package com.OOPs;
 class Employee{
     private int age;

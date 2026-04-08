@@ -1,3 +1,9 @@
+/*
+🧬 Inheritance
+
+Inheritance is a mechanism where one class acquires the properties and behaviors of another class.
+It helps in code reuse and establishes an "IS-A" relationship.
+ */
 package com.OOPs;
 class Alpha{    //extends object      //Aplha ===> Grand parent class
     int age = 15;

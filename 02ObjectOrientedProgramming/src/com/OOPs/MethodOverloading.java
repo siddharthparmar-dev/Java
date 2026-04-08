@@ -1,3 +1,11 @@
+/*
+🔁 Polymorphism
+
+Polymorphism allows a method to behave differently based on the object or parameters.
+
+==> Compile time polymorphism ==> Method Overloading
+==> Same method name but diffrent parameters, either diffrent amount of paramter or diffrent datatype of paramters
+ */
 package com.OOPs;
 class Calc{
     int add(int n1,int n2){

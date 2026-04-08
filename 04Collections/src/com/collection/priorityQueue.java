@@ -5,6 +5,9 @@ import java.util.PriorityQueue;
 public class priorityQueue {
     public static void main(String[] args) {
         PriorityQueue<Integer> pQueue = new PriorityQueue<>(2);
+        //priority Queue increases its size more elements are inserted than its initial capacity
+        // if old capacity is < 64 , then 2x old capacity
+        // if old capacity is >= 64 , then 1.5x old capacity
         pQueue.add(78);
         pQueue.add(14);
         pQueue.add(86);
@@ -21,7 +24,7 @@ public class priorityQueue {
         System.out.println(pQueue);
         pQueue.offer(89);
         System.out.println(pQueue);
-
+        // we cannot insert elements inside priority queue index based bcz it follows heap property
 
         /*
 

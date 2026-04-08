@@ -1,3 +1,9 @@
+/*
+🎭 Abstraction
+
+Abstraction means hiding implementation details and showing only essential features.
+It is achieved using abstract classes and interfaces.
+ */
 package com.OOPs;
 abstract class Aeroplane{
     public abstract void takeOff();
@@ -33,7 +39,7 @@ class Airpot{
         ap.fly();
     }
 }
-public class Polymorphism {
+public class Abstraction {
     public static void main(String[] args) {
         CargoPlane cp = new CargoPlane();
         FighterPlane fp = new FighterPlane();
