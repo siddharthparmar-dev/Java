@@ -2,7 +2,7 @@ package com.collection;
 
 import java.util.PriorityQueue;
 
-public class MyPriorityQueue {
+public class priorityQueue {
     public static void main(String[] args) {
         PriorityQueue<Integer> pQueue = new PriorityQueue<>(2);
         pQueue.add(78);
