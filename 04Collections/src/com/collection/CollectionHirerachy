@@ -1,0 +1,18 @@
+
+
+
+
+
+                                        COLLECTION HIRERACHY
+
+                                collection ===> List , Queue , set
+
+                                List    ===>   ArrayList , LinkedList , vector (Legacy class, Earlier used)
+
+                                Queue   ===>   PriorityQueue
+
+                                Dequeue ===>   ArrayDequeue
+
+                                Set     ===>   HashSet  ===>  LinkedHashSet
+
+                                SortedSet ===> TreeSet

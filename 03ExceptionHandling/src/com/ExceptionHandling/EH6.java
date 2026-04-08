@@ -50,5 +50,6 @@ public class EH6 {
         ❌ method wahi khatam
         ❌ neeche wali line skip
  */
+
     }
 }
