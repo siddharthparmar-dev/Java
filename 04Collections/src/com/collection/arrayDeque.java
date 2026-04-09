@@ -7,7 +7,7 @@ class Alpha {
 public class arrayDeque {
     public static void main(String[] args) {
         ArrayDeque<Integer> arrayDeque = new ArrayDeque<>(5);
-        //When capacity is full, then it increases size bby 2x old size
+        //When capacity is full, then it increases size by 2x old size
         arrayDeque.add(100);
         arrayDeque.add(200);  // adds at last
         System.out.println(arrayDeque);
