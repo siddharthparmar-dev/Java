@@ -25,8 +25,13 @@ public class priorityQueue {
         pQueue.offer(89);
         System.out.println(pQueue);
         // we cannot insert elements inside priority queue index based bcz it follows heap property
-
-        /*
+        System.out.println(pQueue.peek());
+        // 14
+        // [14, 27, 86, 78, 196, 158, 235, 200, 89]
+        System.out.println(pQueue.poll());
+        System.out.println(pQueue);
+        //[27, 78, 86, 89, 196, 158, 235, 200]
+    /*
 
             🧠 Important Concept (ye pakad le 🔥)
 
