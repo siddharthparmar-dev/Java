@@ -18,6 +18,7 @@ public class priorityQueue {
 
         System.out.println(pQueue);
         //[14, 27, 86, 78, 196, 158, 235]
+        // order of insertion is preserved in Array Deque
 
         // some pre defined methods
         pQueue.offer(200);
