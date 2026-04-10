@@ -14,6 +14,11 @@ public class treeSet {
         //treeSet.add(175); // duplicate elements are not allowed in tree set
         System.out.println(treeSet);
         //[50, 100, 125, 150, 175, 200]
+        System.out.println(treeSet.lower(58)); //50
+        System.out.println(treeSet.higher(58));  //100
+        System.out.println(treeSet.ceiling(65)); //100
+        System.out.println(treeSet.floor(65)); //50
+        System.out.println(treeSet.headSet(125)); // [50, 100]
     }
 }
 
