@@ -18,92 +18,13 @@ public class linkedList {
         linkedList.add(2,96);
         System.out.println(linkedList);
         //[54, 35, 96, 15, 78, 78, null]
-       /*
-       // ================= POINTER / REFERENCE =================
 
-// Pointer = address of another node
-// In Java, we call it "reference"
+        // if we add new value to an existing index pos. then unlike array list there we will be no shifting
+        // a new node will be created and linking of nodes will be changed
 
-class Node {
-    int data;
-    Node next;   // stores address of next node (reference)
+        // LinkedList uses references (pointers) to connect nodes,
+        // and elements are accessed sequentially, not by index.
 
-    Node(int data) {
-        this.data = data;
-        this.next = null;
-    }
-}
-
-
-// ================= LINKED LIST STRUCTURE =================
-
-// Example:
-// [10 | next] → [20 | next] → [30 | next] → null
-
-// Each node:
-// - stores data
-// - stores reference to next node
-
-
-// ================= INDEX IN LINKED LIST =================
-
-// ❌ No direct index like array
-// ✅ Access via traversal
-
-// Example:
-list.get(2);
-
-// Internally:
-Node temp = head;
-for(int i = 0; i < 2; i++) {
-    temp = temp.next;   // move step by step
-}
-
-
-// ================= INSERTION (CONCEPT) =================
-
-// Insert at index 2
-
-// Step 1: reach index-1 node
-Node temp = head;
-for(int i = 0; i < 1; i++) {
-    temp = temp.next;
-}
-
-// Step 2: insert new node
-Node newNode = new Node(96);
-
-newNode.next = temp.next;
-temp.next = newNode;
-
-
-// ================= DELETION (CONCEPT) =================
-
-// Delete node at index 2
-
-Node temp = head;
-for(int i = 0; i < 1; i++) {
-    temp = temp.next;
-}
-
-// skip node
-temp.next = temp.next.next;
-
-
-// ================= KEY POINTS =================
-
-// 1. No contiguous memory (nodes are scattered)
-// 2. No direct index access
-// 3. Traversal required (O(n))
-// 4. Insertion/Deletion = O(1) after reaching node
-
-
-// ================= ONE LINE =================
-
-// LinkedList uses references (pointers) to connect nodes,
-// and elements are accessed sequentially, not by index.
-
-        */
     }
 }
 /*
