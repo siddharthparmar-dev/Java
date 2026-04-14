@@ -1,8 +1,5 @@
 
 
-
-
-
                                         COLLECTION HIRERACHY
 
                                 collection ===> List , Queue , set
@@ -16,3 +13,147 @@
                                 Set     ===>   HashSet  ===>  LinkedHashSet
 
                                 SortedSet ===> TreeSet
+
+// ===================== ARRAYLIST =====================
+/*
+ArrayList:
+- Dynamic array (resizable)
+- Maintains insertion order
+- Allows duplicates
+- Fast access (O(1)), slow insert/delete in middle
+*/
+import java.util.*;
+
+class ArrayListExample {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(20);
+        list.add(10); // duplicate allowed
+
+        System.out.println(list.get(1)); // 20
+    }
+}
+
+
+// ===================== LINKEDLIST =====================
+/*
+LinkedList:
+- Doubly linked list (nodes + pointers)
+- Maintains order
+- Allows duplicates
+- Fast insertion/deletion
+- Slow access (no direct indexing)
+*/
+class LinkedListExample {
+    public static void main(String[] args) {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.add(10);
+        list.add(20);
+        list.addFirst(5);
+
+        System.out.println(list); // [5, 10, 20]
+    }
+}
+
+
+// ===================== ARRAYDEQUE =====================
+/*
+ArrayDeque:
+- Double-ended queue (Deque)
+- Insert/remove from both ends
+- Faster than Stack/LinkedList for queue ops
+- Null not allowed
+*/
+class ArrayDequeExample {
+    public static void main(String[] args) {
+        ArrayDeque<Integer> dq = new ArrayDeque<>();
+        dq.addFirst(10);
+        dq.addLast(20);
+        dq.removeFirst();
+
+        System.out.println(dq); // [20]
+    }
+}
+
+
+// ===================== PRIORITY QUEUE =====================
+/*
+PriorityQueue:
+- Heap-based (min-heap by default)
+- Elements sorted by priority
+- No null allowed
+- Order not based on insertion
+*/
+class PriorityQueueExample {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.add(30);
+        pq.add(10);
+        pq.add(20);
+
+        System.out.println(pq.poll()); // 10 (smallest first)
+    }
+}
+
+
+// ===================== HASHSET =====================
+/*
+HashSet:
+- Uses hashing
+- No duplicates
+- No order guaranteed
+- Fast operations (O(1))
+*/
+class HashSetExample {
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<>();
+        set.add(10);
+        set.add(20);
+        set.add(10); // ignored
+
+        System.out.println(set); // unordered
+    }
+}
+
+
+// ===================== TREESET =====================
+/*
+TreeSet:
+- Red-Black Tree
+- No duplicates
+- Sorted order
+- Slower than HashSet (O(log n))
+*/
+class TreeSetExample {
+    public static void main(String[] args) {
+        TreeSet<Integer> set = new TreeSet<>();
+        set.add(30);
+        set.add(10);
+        set.add(20);
+
+        System.out.println(set); // [10, 20, 30]
+    }
+}
+
+
+// ===================== DIFFERENCE SUMMARY =====================
+/*
+ArrayList:
+- Fast read, slow insert/delete (middle)
+
+LinkedList:
+- Fast insert/delete, slow access
+
+ArrayDeque:
+- Best for queue/stack (both ends operations)
+
+PriorityQueue:
+- Always gives smallest (or highest priority)
+
+HashSet:
+- No duplicates, no order
+
+TreeSet:
+- No duplicates, sorted
+*/
