@@ -23,7 +23,7 @@ class Cricketer{
 
     @Override
     public String toString() {
-        return "Cricketer{" +
+        return "Cricketer1{" +
                 "age=" + age +
                 ", name='" + name + '\'' +
                 ", average=" + average +
@@ -48,13 +48,15 @@ public class Comparator {
         System.out.println(list);
         Alpha2 alpha2 = new Alpha2();
 
-        Collections.sort(list,alpha2);
+
         System.out.println(list);
+        Collections.sort(list,alpha2);
         // sort but on what basis?
         // earlier we have single data so we can easily sort but here we have multiple data
         // here comes the concept of comparable and comparartor
 
         // comparator ==> it has only one abstract method
+        // comparator are used for these classes which we can't modify
         // we can use/access comarator using 3 ways 1. implements 2. anonymous inner class 3. Lambda
 
 
