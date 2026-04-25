@@ -67,7 +67,7 @@ Type: Deque (Double-ended queue)
 
 ✔ Duplicates: YES
 ✔ Null: NO
-✔ Order: Maintains insertion order 
+✔ Order: Maintains insertion order
 ✔ Index Access: NO
 ✔ Insert/Delete: FAST (both ends)
 
