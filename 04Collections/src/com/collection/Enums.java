@@ -1,7 +1,7 @@
 package com.collection;
 
-public class map {
+public class Enums {
     public static void main(String[] args) {
-
+        
     }
 }
