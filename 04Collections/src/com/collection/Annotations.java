@@ -1,7 +1,7 @@
 package com.collection;
 
-public class Enums {
+public class Annotations {
     public static void main(String[] args) {
-
+        
     }
 }
