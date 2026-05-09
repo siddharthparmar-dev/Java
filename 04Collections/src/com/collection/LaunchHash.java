@@ -1,3 +1,5 @@
+package com.collection;
+
 import java.util.LinkedHashSet;
 
 public class LaunchHash

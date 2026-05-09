@@ -3,51 +3,44 @@ package com.collection;
 import java.util.ArrayList;
 import java.util.Collections;
 
-class Cricketer1 implements Comparable<Cric1>{
+class Student implements Comparable<Student>{
     int age;
     String name;
-    double average;
-    double strikeRate;
 
-    public Cricketer1() {
-
-    }
-
-    public Cricketer1(int age, String name, double average, double strikeRate) {
-        super();
+    Student(int age, String name){
         this.age = age;
         this.name = name;
-        this.average = average;
-        this.strikeRate = strikeRate;
     }
 
-    @Override
-    public String toString() {
-        return "Cric1{" +
-                "age=" + age +
-                ", name='" + name + '\'' +
-                ", average=" + average +
-                ", strikeRate=" + strikeRate +
-                '}';
+    public String toString(){
+        return age + " " + name;
     }
 
-    @Override
-    public int compareTo(Cric1 c1) {
-//        if (this.average > c1.average)
-//            return 1;                 //return -1 → “put me first”
-//        else
-//            return -1;                //return 1 → “put me later”
-        return (int) (this.average - c1.average);
+    //default sorting logic
+    public int compareTo(Student s){ // java will compare this obj and another student object
+        return this.age - s.age;
+        /*
+        // eg: this.age = 22 and s.age = 17 ==> 22-17 => 5
+        negative -> current object smaller
+        positive -> current object bigger
+        0 -> equal
+         */
     }
 }
 public class comparable {
     public static void main(String[] args) {
-        ArrayList<Cric1> list = new ArrayList<>();
-        list.add(new Cric1(15,"vaibhav suryavanshi",50.23,150));
-        list.add(new Cric1(38,"virat kohli",50.43,140));
-        list.add(new Cric1(22,"abhishek sharma",35.23,180));
-        System.out.println(list);
-        Collections.sort(list);
-        System.out.println(list);
+        // comparable ==> Defualt sorting , single sorted always not multiple
+        // for multiple comparison we use comparartor
+        //eg: I Always want students sorted by age
+        ArrayList<Student> arrayList = new ArrayList<>();
+        arrayList.add(new Student(22,"sid"));
+        arrayList.add(new Student(17,"Aman"));
+        arrayList.add(new Student(26,"Piyush"));
+        System.out.println(arrayList);
+        //[22 sid, 17 Aman, 26 Piyush]
+
+        Collections.sort(arrayList);
+        System.out.println(arrayList);
+        //[17 Aman, 22 sid, 26 Piyush]
     }
 }
