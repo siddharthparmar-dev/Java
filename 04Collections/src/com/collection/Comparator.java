@@ -23,7 +23,7 @@ class Cricketer{
 
     @Override
     public String toString() {
-        return "Cricketer1{" +
+        return "Cric1{" +
                 "age=" + age +
                 ", name='" + name + '\'' +
                 ", average=" + average +
@@ -31,19 +31,19 @@ class Cricketer{
                 '}';
     }
 }
-class Alpha2 implements java.util.Comparator<Cricketer> {
+class Alpha2 implements java.util.Comparator<Cric5> {
 
     @Override
-    public int compare(Cricketer c1, Cricketer c2) {
+    public int compare(Cric5 c1, Cric5 c2) {
         return (int) ((int) c1.strikeRate - c2.strikeRate);
     }
 }
 public class Comparator {
     public static void main(String[] args) {
-        ArrayList<Cricketer> list = new ArrayList<>();
-        list.add(new Cricketer(15,"vaibhav suryavanshi",50.23,150));
-        list.add(new Cricketer(38,"virat kohli",50.43,140));
-        list.add(new Cricketer(22,"abhishek sharma",35.23,180));
+        ArrayList<Cric5> list = new ArrayList<>();
+        list.add(new Cric5(15,"vaibhav suryavanshi",50.23,150));
+        list.add(new Cric5(38,"virat kohli",50.43,140));
+        list.add(new Cric5(22,"abhishek sharma",35.23,180));
 
         System.out.println(list);
         Alpha2 alpha2 = new Alpha2();

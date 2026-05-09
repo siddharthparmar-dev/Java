@@ -3,7 +3,7 @@ package com.collection;
 import java.util.ArrayList;
 import java.util.Collections;
 
-class Cricketer1 implements Comparable<Cricketer1>{
+class Cricketer1 implements Comparable<Cric1>{
     int age;
     String name;
     double average;
@@ -23,7 +23,7 @@ class Cricketer1 implements Comparable<Cricketer1>{
 
     @Override
     public String toString() {
-        return "Cricketer1{" +
+        return "Cric1{" +
                 "age=" + age +
                 ", name='" + name + '\'' +
                 ", average=" + average +
@@ -32,7 +32,7 @@ class Cricketer1 implements Comparable<Cricketer1>{
     }
 
     @Override
-    public int compareTo(Cricketer1 c1) {
+    public int compareTo(Cric1 c1) {
 //        if (this.average > c1.average)
 //            return 1;                 //return -1 → “put me first”
 //        else
@@ -42,10 +42,10 @@ class Cricketer1 implements Comparable<Cricketer1>{
 }
 public class comparable {
     public static void main(String[] args) {
-        ArrayList<Cricketer1> list = new ArrayList<>();
-        list.add(new Cricketer1(15,"vaibhav suryavanshi",50.23,150));
-        list.add(new Cricketer1(38,"virat kohli",50.43,140));
-        list.add(new Cricketer1(22,"abhishek sharma",35.23,180));
+        ArrayList<Cric1> list = new ArrayList<>();
+        list.add(new Cric1(15,"vaibhav suryavanshi",50.23,150));
+        list.add(new Cric1(38,"virat kohli",50.43,140));
+        list.add(new Cric1(22,"abhishek sharma",35.23,180));
         System.out.println(list);
         Collections.sort(list);
         System.out.println(list);

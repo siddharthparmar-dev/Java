@@ -1,5 +1,15 @@
 /*
+
 ==================== JAVA COLLECTIONS NOTES ====================
+                        Iterable
+                        |
+                        Collection
+                        |
+    ------------------------------------------------
+    |                    |                         |
+    List                Set                      Queue
+
+    Map   // NOT part of Collection interface
 
 -------------------- 1. ARRAYLIST --------------------
 Type: List (Dynamic Array)
