@@ -9,7 +9,7 @@ public class Treemap {
         tm.put(2,"Bob");
         tm.put(3,"David");
         //tm.put(null,"John"); // null pointer exception
-        tm.put(4,null); // value can be null 
+        tm.put(4,null); // value can be null
         System.out.println(tm);
     }
 }
