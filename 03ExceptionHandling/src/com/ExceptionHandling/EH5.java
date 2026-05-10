@@ -5,7 +5,6 @@ import java.util.Scanner;
 class Demo3{
     public void divide(){
         try {
-        System.out.println("Calculator app started");
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter Numerator");
         int num = scan.nextInt();

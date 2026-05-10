@@ -3,15 +3,19 @@ package com.ExceptionHandling;
 import java.util.Scanner;
 class Demo{
     public void divide(){
-        System.out.println("Calculator app started");
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter Numerator");
-        int num = scan.nextInt();
-        System.out.println("Enter Denominator");
-        int deno = scan.nextInt();
-        int result = num / deno;
-        System.out.println("Result is : " + result);
-        System.out.println("Calculator app terminated");
+        try {
+            System.out.println("calc app");
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter Numerator");
+            int num = scan.nextInt();
+            System.out.println("Enter Denominator");
+            int deno = scan.nextInt();
+            int result = num / deno;
+            System.out.println("Result is : " + result);
+            System.out.println("Calculator app terminated");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 class Demo2{

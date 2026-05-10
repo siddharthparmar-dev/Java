@@ -9,6 +9,7 @@ public class arrayDeque {
         ArrayDeque<Integer> arrayDeque = new ArrayDeque<>(5);
         //When capacity is full, then it increases size by 2x old size
         arrayDeque.add(100);
+        arrayDeque.add(100);
         arrayDeque.add(200);  // adds at last
         System.out.println(arrayDeque);
         //[100, 200]
