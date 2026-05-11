@@ -2,7 +2,7 @@ package com.Enums_Annotations;
 enum Week{
     MON,TUE,WED,THU,FRI,SAT,SUN;  //Enum values are objects not normal string
 }
-public class Enums {
+public class Enum {
     public static void main(String[] args) {
         //Enums means fixed set of constants
         //fixed set of constants
