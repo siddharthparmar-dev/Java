@@ -9,8 +9,8 @@ public class HashTable {
         ht.put(1,"AI");
         ht.put(2,"Bob");
         ht.put(3,"David");
-        //tm.put(null,"John"); // null pointer exception
-        ht.put(4,null); // value cannot be null // Null pointer exception
+        //ht.put(null,"John"); // null pointer exception
+//        ht.put(4,null); // value cannot be null // Null pointer exception
         System.out.println(ht);
     }
 }
