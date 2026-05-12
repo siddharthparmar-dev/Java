@@ -11,7 +11,7 @@ class Animal{
     }
 }
 class Tiger extends Animal{
-    @Override
+    //@Override
     public void animalUsuallyHuntsAndEats() {
         System.out.println("Tiger USually Hunt and Eats");
     }
