@@ -1,8 +1,6 @@
 package com.Enums_Annotations;
-interface ABD{
-
-}
-public class CustomAnnotation {
+interface 
+public class LaunchAnnotation2 {
     public static void main(String[] args) {
 
     }
