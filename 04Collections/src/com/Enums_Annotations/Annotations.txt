@@ -1,0 +1,31 @@
+==> What is Annotation?
+Annotation is basically:
+special metadata / extra information
+given to: class method variable constructor etc.
+@Target ===>  "Where can annotation be used?"
+Suppose you create annotation:
+@CricketPlayer
+Should it be used on:
+class?
+method?
+variable?
+constructor?
+Java needs to know.
+
+Common Targets
+Target	Meaning
+TYPE	class/interface
+METHOD	methods
+FIELD	variables
+CONSTRUCTOR	constructor
+PARAMETER	method parameter
+
+
+ @Retention ===> "How long annotation should survive?"
+Java asks:
+Should annotation exist:
+only in source?
+after compile?
+during runtime?
+That is retention.
+
