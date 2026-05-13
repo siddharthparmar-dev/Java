@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 }
 @Cars(Name = "BMW", model = 10)
 class BMW{
-    
+
 }
 public class CustomAnnotation2 {
     public static void main(String[] args) {

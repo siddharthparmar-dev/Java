@@ -1,0 +1,53 @@
+// Reflection API
+
+/*
+Reflection API allows Java to inspect and manipulate
+classes, methods, fields, constructors, and annotations
+at runtime.
+
+Mainly used by frameworks like:
+Spring Boot, Hibernate, JUnit.
+
+Important Class:
+Class
+
+Common Methods:
+getClass()
+getMethod()
+getField()
+getAnnotation()
+invoke()
+
+Example:
+*/
+
+class Student {
+
+    public void show() {
+        System.out.println("Hello");
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) throws Exception {
+
+        Student s = new Student();
+
+        // get Class object
+        Class cls = s.getClass();
+
+        // get method
+        java.lang.reflect.Method m = cls.getMethod("show");
+
+        // invoke method dynamically
+        m.invoke(s);
+    }
+}
+
+/*
+Output:
+Hello
+
+Reflection = Runtime inspection and manipulation of classes.
+*/
