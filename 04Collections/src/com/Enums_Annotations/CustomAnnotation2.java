@@ -28,9 +28,6 @@ class BMW{
 public class CustomAnnotation2 {
     public static void main(String[] args) {
         BMW bmw = new BMW();
-        Class classname = bmw.getClass();
-        System.out.println(classname);
-        String method = classname.getDeclaredMethods()[1].getName();
-        System.out.println(method);
+
     }
 }
