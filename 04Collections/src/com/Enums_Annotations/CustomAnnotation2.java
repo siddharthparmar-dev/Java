@@ -12,10 +12,25 @@ import java.lang.annotation.Target;
 }
 @Cars(Name = "BMW", model = 10)
 class BMW{
+    private  String name;
+    public BMW() {
+        System.out.println("BMW Constructor");
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 public class CustomAnnotation2 {
     public static void main(String[] args) {
-
+        BMW bmw = new BMW();
+        Class classname = bmw.getClass();
+        System.out.println(classname);
+        String method = classname.getDeclaredMethods()[1].getName();
+        System.out.println(method);
     }
 }
