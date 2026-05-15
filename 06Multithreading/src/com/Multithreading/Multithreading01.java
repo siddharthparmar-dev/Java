@@ -2,6 +2,20 @@ package com.Multithreading;
 
 public class Multithreading01 {
     public static void main(String[] args) {
+        /*
+In Java, a Thread is a lightweight sub-process — an independent path of execution
+inside a program.
 
+Normally, Java programs run one task at a time:
+
+System.out.println("Task 1");
+System.out.println("Task 2");
+
+But with threads, multiple tasks can run concurrently.
+
+What is Multithreading?
+Multithreading means:
+Executing multiple threads simultaneously to perform multiple tasks efficiently
+         */
     }
 }
