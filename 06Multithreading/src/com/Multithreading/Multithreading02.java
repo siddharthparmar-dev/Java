@@ -11,7 +11,7 @@ class Alpha extends Thread {
 Thread is a predefined Java class
 Java already gives a class named: Thread
 It contains things related to threads like:
-start()  
+start()
 run()
 sleep()
 currentThread()
@@ -27,8 +27,12 @@ etc.
         System.out.println("id " + id + " age " + age);
     }
 
+    @Override
+    public void run() {
+        registration();
+    }
 }
-class Beta{
+class Beta extends Thread {
     public void courseInfo(){
         for (int i = 0; i < 5; i++) {
             System.out.println("Visit website for more courses");
@@ -40,8 +44,13 @@ class Beta{
             }
         }
     }
+
+    @Override
+    public void run() {
+        courseInfo();
+    }
 }
-class Gamma{
+class Gamma extends Thread {
     public void printingStars() {
         for (int i = 0; i < 5; i++) {
             System.out.println(" *");
@@ -52,15 +61,23 @@ class Gamma{
             }
         }
     }
+
+    @Override
+    public void run() {
+        printingStars();
+    }
 }
 public class Multithreading02 {
     public static void main(String[] args) {
         Alpha a = new Alpha();
         Beta b = new Beta();
         Gamma g = new Gamma();
-
-        a.registration();
-        b.courseInfo();
-        g.printingStars();
+        a.start(); // to give life to new thread, we use start
+        b.start();
+        g.start();
+        //==> we dont have to invoke run method
+//        a.registration();
+//        b.courseInfo();
+//        g.printingStars();
     }
 }

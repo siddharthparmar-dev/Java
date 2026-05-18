@@ -1,31 +1,468 @@
-A Java program normally works using one thread.
+/*
+=========================================================
+             JAVA MULTITHREADING NOTES
+=========================================================
 
-A thread is simply:
+---------------------------------------------------------
+1. WHAT IS A THREAD ?
+---------------------------------------------------------
 
-“A path of execution”
-or
-“A worker doing a task”
+A Thread is a lightweight sub-process.
 
-Think of threads like workers in a restaurant.
+It is used to perform tasks simultaneously.
 
-One worker taking orders
-One worker cooking
-One worker cleaning
+Real Life Examples:
+-------------------
+- Watching YouTube + Downloading file
+- Listening music + Typing
+- Playing game + Background updates
 
-All workers can work at the same time.
+All these tasks run together using threads.
 
-That is multithreading.
 
-In your code:
+---------------------------------------------------------
+2. DEFAULT THREAD IN JAVA
+---------------------------------------------------------
+
+Every Java program contains one thread by default:
+
+-> Main Thread
+
+Example:
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        System.out.println("Hello");
+    }
+}
+
+Here JVM automatically creates:
+
+-> Main Thread
+
+
+---------------------------------------------------------
+3. SINGLE THREAD EXECUTION
+---------------------------------------------------------
+
+If only one thread exists:
+
+Task1 -> Task2 -> Task3
+
+Tasks execute one after another.
+
+Example:
 
 a.registration();
 b.courseInfo();
 g.printingStars();
 
-these methods are running one after another because you are NOT using threads yet.
+Execution Flow:
+---------------
+1. registration() completes
+2. courseInfo() starts
+3. printingStars() starts
 
-So execution flow is:
+This is NOT multithreading.
 
-Registration completes
-Then courseInfo starts
-Then printingStars startsple threads simultaneously to perform multiple tasks efficiently
+
+---------------------------------------------------------
+4. WHAT IS MULTITHREADING ?
+---------------------------------------------------------
+
+Multithreading means:
+
+-> Multiple threads execute simultaneously.
+
+Example:
+
+Thread-1 -> registration()
+Thread-2 -> courseInfo()
+Thread-3 -> printingStars()
+
+All tasks run together.
+
+
+---------------------------------------------------------
+5. THREAD CLASS
+---------------------------------------------------------
+
+Java provides predefined class:
+
+Thread
+
+Package:
+--------
+java.lang.Thread
+
+Important methods:
+------------------
+- start()
+- run()
+- sleep()
+- join()
+- currentThread()
+
+
+---------------------------------------------------------
+6. EXTENDING THREAD CLASS
+---------------------------------------------------------
+
+Syntax:
+
+class Alpha extends Thread
+
+Meaning:
+--------
+Alpha class becomes a Thread.
+
+OR
+
+Alpha inherits properties of Thread class.
+
+Example:
+
+class Alpha extends Thread {
+
+}
+
+Now Alpha can behave like a thread.
+
+
+---------------------------------------------------------
+7. WHAT IS run() METHOD ?
+---------------------------------------------------------
+
+run() contains the task
+which thread will perform.
+
+Example:
+
+class Alpha extends Thread {
+
+    public void run() {
+
+        System.out.println("Thread is running");
+    }
+}
+
+Here task is:
+--------------
+-> Print message
+
+
+---------------------------------------------------------
+8. WHAT IS start() METHOD ?
+---------------------------------------------------------
+
+start() creates NEW THREAD.
+
+Example:
+
+Alpha a = new Alpha();
+
+a.start();
+
+Internal Working:
+-----------------
+a.start()
+    ↓
+New Thread Created
+    ↓
+JVM automatically calls:
+run()
+
+IMPORTANT:
+----------
+We NEVER call run() directly for multithreading.
+
+
+---------------------------------------------------------
+9. DIFFERENCE BETWEEN start() AND run()
+---------------------------------------------------------
+
+run():
+------
+- Normal method
+- Does NOT create new thread
+- Sequential execution
+
+start():
+--------
+- Creates new thread
+- Calls run() internally
+- Real multithreading
+
+
+---------------------------------------------------------
+10. WRONG WAY
+---------------------------------------------------------
+
+Alpha a = new Alpha();
+
+a.run();
+
+Why wrong?
+----------
+Because no new thread is created.
+
+It behaves like normal method call.
+
+
+---------------------------------------------------------
+11. CORRECT WAY
+---------------------------------------------------------
+
+Alpha a = new Alpha();
+
+a.start();
+
+Why correct?
+------------
+Because JVM creates separate thread.
+
+
+---------------------------------------------------------
+12. SIMPLE THREAD EXAMPLE
+---------------------------------------------------------
+
+class Alpha extends Thread {
+
+    public void run() {
+
+        for(int i=0;i<5;i++) {
+
+            System.out.println("Hello");
+        }
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Alpha a = new Alpha();
+
+        a.start();
+
+        for(int i=0;i<5;i++) {
+
+            System.out.println("Bye");
+        }
+    }
+}
+
+Possible Output:
+----------------
+
+Hello
+Bye
+Hello
+Bye
+Bye
+
+Reason:
+-------
+Main Thread and Alpha Thread
+run simultaneously.
+
+
+---------------------------------------------------------
+13. MULTIPLE THREAD CLASSES
+---------------------------------------------------------
+
+Example:
+
+class Alpha extends Thread {
+
+    public void run() {
+
+        for(int i=0;i<5;i++) {
+
+            System.out.println("A");
+        }
+    }
+}
+
+class Beta extends Thread {
+
+    public void run() {
+
+        for(int i=0;i<5;i++) {
+
+            System.out.println("B");
+        }
+    }
+}
+
+class Gamma extends Thread {
+
+    public void run() {
+
+        for(int i=0;i<5;i++) {
+
+            System.out.println("C");
+        }
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Alpha a = new Alpha();
+        Beta b = new Beta();
+        Gamma g = new Gamma();
+
+        a.start();
+        b.start();
+        g.start();
+    }
+}
+
+
+---------------------------------------------------------
+14. INTERNAL WORKING OF MULTIPLE THREADS
+---------------------------------------------------------
+
+a.start()
+    ↓
+Thread-A created
+    ↓
+a.run()
+
+b.start()
+    ↓
+Thread-B created
+    ↓
+b.run()
+
+g.start()
+    ↓
+Thread-C created
+    ↓
+g.run()
+
+
+Total Threads:
+--------------
+- Main Thread
+- Alpha Thread
+- Beta Thread
+- Gamma Thread
+
+
+---------------------------------------------------------
+15. THREAD SCHEDULING
+---------------------------------------------------------
+
+CPU rapidly switches between threads.
+
+This process is called:
+
+-> Thread Scheduling
+
+Because of this,
+output becomes mixed.
+
+Example Output:
+---------------
+
+A
+B
+C
+A
+C
+B
+
+
+---------------------------------------------------------
+16. Thread.sleep()
+---------------------------------------------------------
+
+Used to pause current thread.
+
+Syntax:
+
+Thread.sleep(milliseconds);
+
+Example:
+
+Thread.sleep(5000);
+
+5000 ms = 5 seconds
+
+
+---------------------------------------------------------
+17. WHY TRY-CATCH WITH sleep() ?
+---------------------------------------------------------
+
+sleep() may throw exception:
+
+InterruptedException
+
+So Java forces us to handle it.
+
+Example:
+
+try {
+
+    Thread.sleep(5000);
+
+}
+catch(InterruptedException e) {
+
+    e.printStackTrace();
+}
+
+
+---------------------------------------------------------
+18. e.printStackTrace()
+---------------------------------------------------------
+
+Used for debugging.
+
+Prints:
+-------
+- Exception name
+- Error line number
+- Error location
+
+
+---------------------------------------------------------
+19. IMPORTANT MEMORY TRICKS
+---------------------------------------------------------
+
+run()
+-----
+-> Task to perform
+
+start()
+-------
+-> Creates thread + calls run()
+
+sleep()
+-------
+-> Pauses current thread
+
+
+---------------------------------------------------------
+20. MOST IMPORTANT INTERVIEW/BEGINNER POINT
+---------------------------------------------------------
+
+run() does NOT create thread.
+
+start() creates thread.
+
+Always remember:
+
+a.run();   -> Normal method call
+a.start(); -> Real multithreading
+
+
+=========================================================
+                    END OF NOTES
+=========================================================
+*/
