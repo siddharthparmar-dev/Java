@@ -1,13 +1,31 @@
-In Java, a Thread is a lightweight sub-process — an independent path of execution
-inside a program.
+A Java program normally works using one thread.
 
-Normally, Java programs run one task at a time:
+A thread is simply:
 
-System.out.println("Task 1");
-System.out.println("Task 2");
+“A path of execution”
+or
+“A worker doing a task”
 
-But with threads, multiple tasks can run concurrently.
+Think of threads like workers in a restaurant.
 
-What is Multithreading?
-Multithreading means:
-Executing multiple threads simultaneously to perform multiple tasks efficiently
+One worker taking orders
+One worker cooking
+One worker cleaning
+
+All workers can work at the same time.
+
+That is multithreading.
+
+In your code:
+
+a.registration();
+b.courseInfo();
+g.printingStars();
+
+these methods are running one after another because you are NOT using threads yet.
+
+So execution flow is:
+
+Registration completes
+Then courseInfo starts
+Then printingStars startsple threads simultaneously to perform multiple tasks efficiently

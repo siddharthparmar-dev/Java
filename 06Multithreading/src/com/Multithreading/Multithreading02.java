@@ -1,8 +1,22 @@
 package com.Multithreading;
 
 import java.util.Scanner;
-
-class Alpha{
+/*
+means: "Alpha class is becoming a Thread"
+or
+"Alpha class inherits properties of Thread class"
+ */
+class Alpha extends Thread {
+    /*
+Thread is a predefined Java class
+Java already gives a class named: Thread
+It contains things related to threads like:
+start()  
+run()
+sleep()
+currentThread()
+etc.
+     */
     public void registration()
     {
         Scanner sc = new Scanner(System.in);
@@ -10,9 +24,11 @@ class Alpha{
         int id = sc.nextInt();
         System.out.println("Enter your age");
         int age = sc.nextInt();
-        System.out.println("id " + id + "age " + age);
+        System.out.println("id " + id + " age " + age);
     }
 
+}
+class Beta{
     public void courseInfo(){
         for (int i = 0; i < 5; i++) {
             System.out.println("Visit website for more courses");
@@ -24,7 +40,8 @@ class Alpha{
             }
         }
     }
-
+}
+class Gamma{
     public void printingStars() {
         for (int i = 0; i < 5; i++) {
             System.out.println(" *");
@@ -39,8 +56,11 @@ class Alpha{
 public class Multithreading02 {
     public static void main(String[] args) {
         Alpha a = new Alpha();
+        Beta b = new Beta();
+        Gamma g = new Gamma();
+
         a.registration();
-        a.courseInfo();
-        a.printingStars();
+        b.courseInfo();
+        g.printingStars();
     }
 }
