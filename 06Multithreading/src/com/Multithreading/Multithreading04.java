@@ -2,7 +2,7 @@ package com.Multithreading;
 
 import java.util.Scanner;
 
-class Alpha1 implements Runnable {
+class Sigma{
     public void registration()
     {
         Scanner scanner = new Scanner(System.in);
@@ -12,13 +12,6 @@ class Alpha1 implements Runnable {
         int age = scanner.nextInt();
         System.out.println("id " + id + " age " + age);
     }
-
-    @Override
-    public void run() {
-        registration();
-    }
-}
-class Beta1 implements Runnable {
     public void courseInfo(){
         for (int i = 0; i < 5; i++) {
             System.out.println("Visit website for more courses");
@@ -30,13 +23,6 @@ class Beta1 implements Runnable {
             }
         }
     }
-
-    @Override
-    public void run() {
-        courseInfo();
-    }
-}
-class Gamma1 implements Runnable{
     public void printingStars() {
         for (int i = 0; i < 5; i++) {
             System.out.println(" *");
@@ -47,30 +33,21 @@ class Gamma1 implements Runnable{
             }
         }
     }
-
-    @Override
-    public void run() {
-        printingStars();
-    }
 }
-public class Multithreading03 {
+public class Multithreading04 {
     public static void main(String[] args) {
-        System.out.println("Main method started");
-        Alpha1 a = new Alpha1();
-        Beta1 b = new Beta1();
-        Gamma1 g = new Gamma1();
-        Thread thread1 = new Thread(a);
-        // Runnable will not create thread
-        //we will create thread using thread pre defined class
-        // we have to pass a runnable task in argument of thread
-        Thread thread2 = new Thread(b);
-        Thread thread3 = new Thread(g);
-        thread1.setName("Reg");
-        thread2.setName("course");
-        thread3.setName("stars");
-        thread1.start();
-        thread2.start();
-        thread3.start();
-        System.out.println("Main method finished");
+        Sigma a = new Sigma();
+        Thread t1 = new Thread(() -> {
+            a.registration();
+        });
+        Thread t2 = new Thread(() -> {
+            a.courseInfo();
+        });
+        Thread t3 = new Thread(() -> {
+            a.printingStars();
+        });
+        t1.start();
+        t2.start();
+        t3.start();
     }
 }
