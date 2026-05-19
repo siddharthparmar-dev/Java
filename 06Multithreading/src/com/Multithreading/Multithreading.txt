@@ -461,7 +461,340 @@ Always remember:
 a.run();   -> Normal method call
 a.start(); -> Real multithreading
 
+/*
+=========================================================
+              RUNNABLE INTERFACE NOTES
+=========================================================
 
+
+---------------------------------------------------------
+1. WHAT IS RUNNABLE INTERFACE ?
+---------------------------------------------------------
+
+Runnable is a predefined interface in Java.
+
+Package:
+--------
+java.lang
+
+It is used to create threads.
+
+
+---------------------------------------------------------
+2. WHY RUNNABLE INTERFACE ?
+---------------------------------------------------------
+
+There are 2 ways to create thread in Java:
+
+1. Extending Thread class
+2. Implementing Runnable interface
+
+Runnable is preferred in real projects.
+
+
+---------------------------------------------------------
+3. WHY NOT ALWAYS EXTEND THREAD ?
+---------------------------------------------------------
+
+Java does NOT support multiple inheritance.
+
+Example:
+
+class A extends B, C   // INVALID
+
+Suppose your class already extends another class.
+
+Then it cannot extend Thread class.
+
+So we use Runnable interface.
+
+
+---------------------------------------------------------
+4. SYNTAX OF RUNNABLE
+---------------------------------------------------------
+
+class Alpha implements Runnable
+
+Meaning:
+--------
+Alpha class is providing implementation
+of Runnable interface.
+
+
+---------------------------------------------------------
+5. Runnable INTERFACE CONTAINS
+---------------------------------------------------------
+
+Runnable interface contains only one method:
+
+public abstract void run();
+
+
+---------------------------------------------------------
+6. IMPORTANT CONCEPT
+---------------------------------------------------------
+
+Runnable does NOT create thread.
+
+It only defines task.
+
+Thread class actually creates thread.
+
+
+---------------------------------------------------------
+7. SIMPLE RUNNABLE EXAMPLE
+---------------------------------------------------------
+
+class Alpha implements Runnable {
+
+    public void run() {
+
+        System.out.println("Thread is running");
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Alpha a = new Alpha();
+
+        Thread t = new Thread(a);
+
+        t.start();
+    }
+}
+
+
+---------------------------------------------------------
+8. INTERNAL WORKING
+---------------------------------------------------------
+
+Step 1:
+-------
+Alpha object created.
+
+Alpha a = new Alpha();
+
+
+Step 2:
+-------
+Runnable task passed to Thread object.
+
+Thread t = new Thread(a);
+
+
+Step 3:
+-------
+New thread created.
+
+t.start();
+
+
+Step 4:
+-------
+JVM internally calls:
+
+a.run();
+
+
+---------------------------------------------------------
+9. FLOW OF EXECUTION
+---------------------------------------------------------
+
+Alpha a = new Alpha();
+
+        ↓
+
+Thread t = new Thread(a);
+
+        ↓
+
+t.start();
+
+        ↓
+
+New Thread Created
+
+        ↓
+
+run() executes
+
+
+---------------------------------------------------------
+10. WHY WE PASS OBJECT INSIDE THREAD ?
+---------------------------------------------------------
+
+Thread class needs task to execute.
+
+Runnable object contains task inside run().
+
+So we pass Runnable object to Thread class.
+
+Example:
+
+Thread t = new Thread(a);
+
+Here:
+-----
+a = Runnable object
+
+
+---------------------------------------------------------
+11. MULTIPLE RUNNABLE CLASSES
+---------------------------------------------------------
+
+class Alpha implements Runnable {
+
+    public void run() {
+
+        for(int i=0;i<5;i++) {
+
+            System.out.println("A");
+        }
+    }
+}
+
+class Beta implements Runnable {
+
+    public void run() {
+
+        for(int i=0;i<5;i++) {
+
+            System.out.println("B");
+        }
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Alpha a = new Alpha();
+        Beta b = new Beta();
+
+        Thread t1 = new Thread(a);
+        Thread t2 = new Thread(b);
+
+        t1.start();
+        t2.start();
+    }
+}
+
+
+---------------------------------------------------------
+12. POSSIBLE OUTPUT
+---------------------------------------------------------
+
+A
+B
+A
+B
+B
+A
+
+Output becomes mixed because:
+-----------------------------
+Threads run simultaneously.
+
+
+---------------------------------------------------------
+13. DIFFERENCE BETWEEN THREAD AND RUNNABLE
+---------------------------------------------------------
+
+THREAD CLASS:
+-------------
+class Alpha extends Thread
+
+- Thread itself becomes task
+- Less flexible
+- Cannot extend another class
+
+
+RUNNABLE INTERFACE:
+-------------------
+class Alpha implements Runnable
+
+- Separate task and thread
+- More flexible
+- Can extend another class
+- Preferred in industry
+
+
+---------------------------------------------------------
+14. REAL UNDERSTANDING
+---------------------------------------------------------
+
+Runnable
+--------
+-> WHAT to do (task)
+
+Thread
+------
+-> WHO will do task (worker)
+
+
+Example:
+--------
+Runnable = Cooking instructions
+Thread = Cook
+
+
+---------------------------------------------------------
+15. IMPORTANT MEMORY TRICK
+---------------------------------------------------------
+
+Runnable
+--------
+-> Defines task
+
+Thread
+------
+-> Executes task
+
+
+---------------------------------------------------------
+16. MOST IMPORTANT POINT
+---------------------------------------------------------
+
+Runnable object alone CANNOT create thread.
+
+Wrong:
+------
+
+Alpha a = new Alpha();
+
+a.run();
+
+This is normal method call.
+
+
+Correct:
+--------
+
+Thread t = new Thread(a);
+
+t.start();
+
+Now real thread is created.
+
+
+---------------------------------------------------------
+17. WHICH IS BETTER ?
+---------------------------------------------------------
+
+Runnable interface is better and preferred because:
+
+- Better design
+- More flexible
+- Supports inheritance
+- Used in real projects
+
+
+=========================================================
+                    END OF NOTES
+=========================================================
+*/
 =========================================================
                     END OF NOTES
 =========================================================
