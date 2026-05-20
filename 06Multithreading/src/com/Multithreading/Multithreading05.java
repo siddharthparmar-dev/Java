@@ -2,10 +2,24 @@ package com.Multithreading;
 
 import java.util.Scanner;
 
-class Sigma{
+class Delta implements Runnable {
+    Scanner scanner = new Scanner(System.in);
+    @Override
+    public void run()
+    {
+        String Name = Thread.currentThread().getName();
+        if (Name.equals("Reg")){
+            registration();
+        }
+        else if (Name.equals("Courses")){
+            courseInfo();
+        }
+        else {
+            printingStars();
+        }
+    }
     public void registration()
     {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your id");
         int id = scanner.nextInt();
         System.out.println("Enter your age");
@@ -34,22 +48,20 @@ class Sigma{
         }
     }
 }
-public class Multithreading04 {
+public class Multithreading05 {
     public static void main(String[] args) {
-        Sigma a = new Sigma();
-        //in this we have only one class and multiple methods inside it
-        // so we can do multithreading by creating lambda function as parameter
-        Thread t1 = new Thread(() -> {
-            a.registration();
-        });
-        Thread t2 = new Thread(() -> {
-            a.courseInfo();
-        });
-        Thread t3 = new Thread(() -> {
-            a.printingStars();
-        });
+        Delta delta = new Delta();
+        Thread t1 =  new Thread(delta);
+        Thread t2 =  new Thread(delta);
+        Thread t3 =  new Thread(delta);
+
+        t1.setName("Reg");
+        t2.setName("Courses");
+        t3.setName("Stars");
+
         t1.start();
         t2.start();
         t3.start();
+
     }
 }

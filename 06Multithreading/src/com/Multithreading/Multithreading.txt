@@ -791,6 +791,12 @@ Runnable interface is better and preferred because:
 - Used in real projects
 
 
+Thread Priority
+Used to suggest CPU scheduling priority.
+Range:
+1 → MIN_PRIORITY
+5 → NORM_PRIORITY
+10 → MAX_PRIORITY
 =========================================================
                     END OF NOTES
 =========================================================
