@@ -1,4 +1,4 @@
-package com.Enums_Annotations;
+package com.Enum;
 enum Week{
     MON,TUE,WED,THU,FRI,SAT,SUN;  //Enum values are objects not normal string
 }

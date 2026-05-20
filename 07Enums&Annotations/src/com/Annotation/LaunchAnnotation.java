@@ -1,4 +1,4 @@
-package com.Enums_Annotations;
+package com.Annotation;
 /*
 ==> What is Annotation?
 Annotation is basically:

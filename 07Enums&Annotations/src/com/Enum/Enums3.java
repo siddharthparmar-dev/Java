@@ -1,4 +1,4 @@
-package com.Enums_Annotations;
+package com.Enum;
 enum Result{
     PASS,FAIL,NR;
 

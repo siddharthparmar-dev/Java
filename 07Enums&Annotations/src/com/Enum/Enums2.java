@@ -1,4 +1,4 @@
-package com.Enums_Annotations;
+package com.Enum;
 enum Laptop{
     Dell(45000),MacBook(49000),HP(52000),Asus(55000),Lenovo(48000);
     /*

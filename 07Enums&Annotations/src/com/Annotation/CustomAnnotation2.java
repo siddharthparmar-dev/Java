@@ -1,4 +1,4 @@
-package com.Enums_Annotations;
+package com.Annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
