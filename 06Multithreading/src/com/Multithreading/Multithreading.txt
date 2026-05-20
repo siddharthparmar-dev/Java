@@ -797,6 +797,113 @@ Range:
 1 → MIN_PRIORITY
 5 → NORM_PRIORITY
 10 → MAX_PRIORITY
+synchronized in Java — Short Notes
+Definition
+
+synchronized is used in multithreading to allow only one thread at a time to access shared resources.
+
+It prevents:
+
+Race condition
+Data inconsistency
+Multiple threads modifying same data together
+Syntax
+Synchronized Method
+public synchronized void run() {
+
+}
+Synchronized Block
+synchronized(this) {
+
+}
+What Gets Locked?
+
+Java locks the OBJECT (monitor lock).
+
+synchronized(this)
+
+means current object is locked.
+
+Race Condition
+
+When multiple threads modify same data simultaneously causing wrong output.
+
+Example
+class Counter {
+
+    int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+}
+
+Only one thread can execute increment() at a time.
+
+Important Point
+
+Synchronization works properly only when threads share SAME object.
+
+Car c = new Car();
+
+Thread t1 = new Thread(c);
+Thread t2 = new Thread(c);
+StringBuilder vs StringBuffer
+Feature	StringBuilder	StringBuffer
+Mutable	✅ Yes	✅ Yes
+Thread Safe	❌ No	✅ Yes
+Synchronized	❌ No	✅ Yes
+Speed	Faster	Slower
+Used In	Single thread	Multithreading
+Why StringBuffer is Thread-Safe?
+
+Its methods are synchronized internally.
+
+Example (internally):
+
+public synchronized StringBuffer append(String str)
+
+So:
+
+one thread enters append()
+other waits
+Why StringBuilder is Faster?
+
+No synchronization.
+
+No locking.
+
+Threads don't wait.
+
+Real-Life Analogy
+StringBuilder
+
+Two people writing in same notebook together ✍️✍️
+
+Messy output ❌
+
+StringBuffer
+
+One writes first, other waits ✍️
+
+Clean output ✅
+
+Your Car Example
+public synchronized void run()
+
+Meaning:
+
+Only one thread can use the car object at a time 🚗
+
+Other threads wait until lock is released.
+
+Important Interview Lines
+
+synchronized provides thread safety by allowing only one thread at a time to access critical section.
+
+StringBuffer is thread-safe because its methods are synchronized.
+
+StringBuilder is not thread-safe but faster.
 =========================================================
                     END OF NOTES
 =========================================================

@@ -62,6 +62,8 @@ public class Multithreading05 {
         t1.start();
         t2.start();
         t3.start();
+        //which thread will run first, is not in our hands
+        //CPU/JVM Scheduler decides which thread will run first
 
     }
 }
